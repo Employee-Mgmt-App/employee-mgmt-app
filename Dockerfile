@@ -8,8 +8,11 @@ COPY package-lock.json .
 RUN npm i @angular/cli@13.3.8
 RUN npm install
 
+
 COPY . .
+
+RUN ng build
 
 EXPOSE 4200
 
-CMD /app/node_modules/.bin/ng serve --host 0.0.0.0 --disableHostCheck
+CMD ["npm","start"]
