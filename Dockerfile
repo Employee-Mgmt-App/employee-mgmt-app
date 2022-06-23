@@ -7,11 +7,11 @@ COPY package-lock.json .
 
 RUN npm i @angular/cli@13.3.8
 RUN npm install
+RUN ng build
 
 
 COPY . .
 
-RUN ng build
 
 EXPOSE 4200
 
