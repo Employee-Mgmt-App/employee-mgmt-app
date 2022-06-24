@@ -1,6 +1,4 @@
 #1 node image for building front end assets
-
-
 FROM node:16.14.0 AS base
 
 WORKDIR /app
@@ -9,7 +7,8 @@ COPY package.json .
 COPY package-lock.json .
 
 
-COPY . .
+# nginx state for serving content
+FROM nginx:latest
 
 
 
@@ -23,8 +22,7 @@ RUN npm run build
 # nginx state for serving content
 FROM nginx:latest
 
-
-COPY nginx.conf /etc/nginx/conf
+COPY nginx.conf /etc/nginx/nginx.conf
 # Copy static assets from builder stage
 COPY --from=base /app/dist/ /usr/share/nginx/html
 
