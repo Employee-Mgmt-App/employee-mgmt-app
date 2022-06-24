@@ -23,4 +23,4 @@ COPY --from=base /app/dist/ /usr/share/nginx/html
 EXPOSE 80
 
 # Containers run nginx with global directives and daemon off
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+CMD ["npm", "start"]
