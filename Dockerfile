@@ -20,7 +20,7 @@ COPY nginx.conf /etc/nginx/nginx.conf
 # Copy static assets from builder stage
 COPY --from=base /app/dist/ /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 8080
 
 # Containers run nginx with global directives and daemon off
 CMD ["nginx", "-g", "daemon off;"]
