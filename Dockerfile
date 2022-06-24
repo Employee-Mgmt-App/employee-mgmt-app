@@ -7,8 +7,7 @@ COPY package.json .
 COPY package-lock.json .
 
 # nginx state for serving content
-FROM nginx:lates
-
+COPY . .
 RUN npm install
 RUN npm run build
 
