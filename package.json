@@ -1,11 +1,15 @@
 {
   "name": "employee-mgmt-app",
   "version": "0.0.0",
+  "engines": {
+    "node": "16.14.0"
+  },
+
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "heroku-postbuild": "ng build --configuration=production",
+    "heroku-postbuild": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
