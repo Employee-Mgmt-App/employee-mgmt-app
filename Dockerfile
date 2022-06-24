@@ -16,7 +16,7 @@ RUN npm run build
 # nginx state for serving content
 FROM nginx:latest
 
-COPY nginx.conf /etc/nginx/conf
+COPY nginx.conf /etc/nginx/nginx.conf
 # Copy static assets from builder stage
 COPY --from=base /app/dist/ /usr/share/nginx/html
 
